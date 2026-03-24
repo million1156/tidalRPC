@@ -14,7 +14,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-13, windows-latest]
+        os: [macos-26, windows-latest]
 
     steps:
       - uses: actions/checkout@v3
@@ -46,19 +46,19 @@ jobs:
           fi
         shell: bash
       - name: Upload DMG (macOS x86_64)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tidalRPC-${{ matrix.os }}
           path: app/tidalRPC-mac-x64.dmg
-        if: matrix.os == 'macos-13'
+        if: matrix.os == 'macos-26'
       - name: Upload DMG (macOS arm64)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tidalRPC-${{ matrix.os }}
           path: app/tidalRPC-mac-arm64.dmg
-        if: matrix.os == 'macos-13'
+        if: matrix.os == 'macos-26'
       - name: Upload Installer (Windows)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tidalRPC-${{ matrix.os }}
           path: app/tidalRPC-installer.exe

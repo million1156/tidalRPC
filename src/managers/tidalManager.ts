@@ -59,10 +59,10 @@ export default class TidalManager {
 				}
 
 				const foundSong = songsInfo
-					.map(s => {
+					.map((s: any) => {
 						if (s.title === data[0].trim() && authors.length === s.artists.length) return s;
 					})
-					.filter(s => {
+					.filter((s: any) => {
 						return s;
 					})[0];
 

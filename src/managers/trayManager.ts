@@ -87,13 +87,13 @@ export default class TrayManager {
 								enabled: false,
 							},
 							{
-								label: song ? song.album.name : "[ALBUM NAME]",
+								label: song ? song.album?.name : "[ALBUM NAME]",
 								type: "radio",
 								checked: store.get("albumPrefs") === AlbumPrefs.justName,
 								click: () => store.set("albumPrefs", AlbumPrefs.justName),
 							},
 							{
-								label: song ? `${song.album.name} (${song.album.year})` : "[ALBUM NAME] ([ALBUM YEAR])",
+								label: song ? `${song.album?.name} (${song.album?.year})` : "[ALBUM NAME] ([ALBUM YEAR])",
 								type: "radio",
 								checked: store.get("albumPrefs") === AlbumPrefs.withYear,
 								click: () => store.set("albumPrefs", AlbumPrefs.withYear),

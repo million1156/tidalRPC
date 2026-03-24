@@ -52,6 +52,7 @@ export default class App {
 
 	private async _checkPerms() {
 		const screenPerms = await systemPreferences.getMediaAccessStatus("screen");
+		// @ts-ignore
 		if (screenPerms !== ("denied" || "restricted")) {
 			return;
 		}
